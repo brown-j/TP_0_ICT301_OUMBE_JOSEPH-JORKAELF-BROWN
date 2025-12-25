@@ -1,0 +1,51 @@
+package ict301.solid.isp;
+
+public interface Workable {
+    void work();
+}
+
+package ict301.solid.isp;
+
+public interface Eatable extends Workable {
+    void eat();
+}
+
+package ict301.solid.isp;
+
+public class HumanWorker implements Eatable {
+
+    @Override
+    public void work() {
+        System.out.println("Les humains travaillent");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Les humains mangent");
+    }
+}
+
+package ict301.solid.isp;
+
+public class RobotWorker implements Workable {
+
+    @Override
+    public void work() {
+        System.out.println("Les robots travaillent sans fatigue");
+    }
+}
+
+package ict301.solid.isp;
+
+public class MainISP {
+
+    public static void main(String[] args) {
+
+        HumanWorker human = new HumanWorker();
+        human.work();
+        human.eat();
+
+        RobotWorker robot = new RobotWorker();
+        robot.work();
+    }
+}
